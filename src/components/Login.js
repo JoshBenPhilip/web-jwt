@@ -23,7 +23,8 @@ export default function Login({ setToken }) {
           return;
         }
         console.log(data.token);
-        // do more...
+        localStorage.setItem("token", data.token);
+        setToken(data.token);
       })
       .catch((err) => console.log(err));
   };
